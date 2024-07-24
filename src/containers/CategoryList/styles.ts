@@ -3,6 +3,10 @@ import { breakpoints } from '../../styles'
 
 export const Container = styled.section`
   margin-top: 80px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-top: 40px;
+  }
 `
 
 export const List = styled.ul`
@@ -15,5 +19,10 @@ export const List = styled.ul`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    column-gap: 16px;
   }
 `
