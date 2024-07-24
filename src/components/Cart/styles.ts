@@ -1,10 +1,7 @@
 import styled from 'styled-components'
-
 import { colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
-
 import lixeira from '../../assets/images/lixeira.svg'
-
 import InputMask from 'react-input-mask'
 
 export const Overlay = styled.div`
@@ -26,6 +23,7 @@ export const CartContainer = styled.div`
   display: none;
   justify-content: flex-end;
   z-index: 1;
+  overflow-y: auto;
 
   &.is-open {
     display: flex;
@@ -35,9 +33,10 @@ export const CartContainer = styled.div`
 export const Sidebar = styled.aside`
   background-color: ${colors.primary};
   z-index: 1;
-  padding: 40px 16px 0 16px;
+  padding: 2.5rem 1rem 0 1rem; /* Usar unidades relativas */
   max-width: 360px;
   width: 100%;
+  box-sizing: border-box;
 
   ${ButtonLink} {
     display: block;
@@ -48,19 +47,23 @@ export const Sidebar = styled.aside`
     color: ${colors.primary};
     font-weight: bold;
   }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
 `
 
 export const Prices = styled.p`
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1rem; /* Usar unidades relativas */
   color: #fff;
-  margin-bottom: 24px;
-  margin-top: 24px;
+  margin: 1.5rem 0; /* Usar unidades relativas */
   display: flex;
   justify-content: space-between;
 
   span {
-    font-size: 12px;
+    font-size: 0.75rem; /* Usar unidades relativas */
     color: ${colors.secundary};
   }
 `
@@ -68,26 +71,26 @@ export const Prices = styled.p`
 export const CartItem = styled.li`
   display: flex;
   background-color: ${colors.secundary};
-  padding: 8px;
+  padding: 0.5rem;
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 1rem; /* Usar unidades relativas */
 
   img {
     height: 80px;
     width: 80px;
     object-fit: cover;
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
   h3 {
     color: ${colors.primary};
     font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 16px;
+    font-size: 1rem; /* Usar unidades relativas */
+    margin-bottom: 1rem; /* Usar unidades relativas */
   }
   span {
     display: block;
     color: ${colors.primary};
-    font-size: 14px;
+    font-size: 0.875rem; /* Usar unidades relativas */
   }
 
   button {
@@ -97,9 +100,22 @@ export const CartItem = styled.li`
     border: none;
     background-color: transparent;
     position: absolute;
-    bottom: 8px;
-    right: 8px;
+    bottom: 0.5rem;
+    right: 0.5rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    img {
+      height: 60px;
+      width: 60px;
+    }
+    button {
+      width: 20px;
+      height: 20px;
+    }
   }
 `
 
@@ -109,16 +125,16 @@ export const Delivery = styled.div`
     width: 100%;
     height: 19px;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 18.75px;
-    margin-bottom: 16px;
+    font-size: 1rem; /* Usar unidades relativas */
+    line-height: 1.25;
+    margin-bottom: 1rem; /* Usar unidades relativas */
   }
   label {
     color: ${colors.secundary};
   }
   input {
-    height: 32px;
-    margin: 8px 0;
+    height: 2rem;
+    margin: 0.5rem 0; /* Usar unidades relativas */
     background-color: ${colors.secundary};
     border: none;
 
@@ -129,18 +145,18 @@ export const Delivery = styled.div`
 
   > p {
     color: ${colors.secundary};
-    font-size: 14px;
-    line-height: 22px;
-    margin-bottom: 24px;
+    font-size: 0.875rem; /* Usar unidades relativas */
+    line-height: 1.57;
+    margin-bottom: 1.5rem; /* Usar unidades relativas */
   }
 `
 
 export const InputDelivery = styled.input`
-  width: 344px;
-  height: 32px;
-  display: block;
   width: 100%;
-  margin: 8px 0;
+  max-width: 344px; /* Ajustar largura máxima */
+  height: 2rem;
+  display: block;
+  margin: 0.5rem 0; /* Usar unidades relativas */
   background-color: ${colors.secundary};
   border: none;
 
@@ -151,12 +167,16 @@ export const InputDelivery = styled.input`
 
 export const InputsWithDisplayFlex = styled.div`
   display: flex;
-  column-gap: 22px;
+  column-gap: 1.375rem; /* Usar unidades relativas */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 `
 
 export const InputNumber = styled(InputMask)`
-  width: 218px;
+  width: 100%;
+  max-width: 218px; /* Ajustar largura máxima */
 `
+
 export const InputCode = styled(InputMask)`
-  width: 87px;
+  width: 100%;
+  max-width: 87px; /* Ajustar largura máxima */
 `
