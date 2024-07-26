@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+
 import { colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
+
 import lixeira from '../../assets/images/lixeira.svg'
+
 import InputMask from 'react-input-mask'
 
 export const Overlay = styled.div`
@@ -10,7 +13,8 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Ajuste de opacidade */
+  background-color: #000;
+  opacity: 0.7;
 `
 
 export const CartContainer = styled.div`
@@ -22,23 +26,18 @@ export const CartContainer = styled.div`
   display: none;
   justify-content: flex-end;
   z-index: 1;
-  overflow-y: auto;
-  transition: transform 0.3s ease-in-out; /* Suavização na transição */
 
   &.is-open {
     display: flex;
-    transform: translateX(0);
   }
 `
 
 export const Sidebar = styled.aside`
   background-color: ${colors.primary};
-  z-index: 2; /* Ajuste de z-index para garantir que o sidebar esteja acima do overlay */
-  padding: 2.5rem 1rem 0 1rem;
+  z-index: 1;
+  padding: 40px 16px 0 16px;
   max-width: 360px;
   width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
 
   ${ButtonLink} {
     display: block;
@@ -48,30 +47,20 @@ export const Sidebar = styled.aside`
     background-color: ${colors.secundary};
     color: ${colors.primary};
     font-weight: bold;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: ${colors.primary}; /* Efeito de hover */
-      color: ${colors.secundary};
-    }
-  }
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-    padding: 1.5rem;
   }
 `
 
 export const Prices = styled.p`
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 14px;
   color: #fff;
-  margin: 1.5rem 0;
+  margin-bottom: 24px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
 
   span {
-    font-size: 0.75rem;
+    font-size: 12px;
     color: ${colors.secundary};
   }
 `
@@ -79,35 +68,26 @@ export const Prices = styled.p`
 export const CartItem = styled.li`
   display: flex;
   background-color: ${colors.secundary};
-  padding: 0.5rem;
+  padding: 8px;
   position: relative;
-  margin-bottom: 1rem;
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: scale(1.02); /* Efeito de hover */
-  }
+  margin-bottom: 16px;
 
   img {
     height: 80px;
     width: 80px;
     object-fit: cover;
-    margin-right: 0.5rem;
-    border-radius: 5px; /* Bordas arredondadas para a imagem */
+    margin-right: 8px;
   }
-
   h3 {
     color: ${colors.primary};
     font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 0.5rem; /* Ajuste na margem */
+    font-size: 16px;
+    margin-bottom: 16px;
   }
-
   span {
     display: block;
     color: ${colors.primary};
-    font-size: 0.875rem;
+    font-size: 14px;
   }
 
   button {
@@ -117,26 +97,9 @@ export const CartItem = styled.li`
     border: none;
     background-color: transparent;
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: 8px;
+    right: 8px;
     cursor: pointer;
-
-    &:hover {
-      opacity: 0.8; /* Efeito de hover no botão */
-    }
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    img {
-      height: 60px;
-      width: 60px;
-    }
-    button {
-      width: 20px;
-      height: 20px;
-    }
   }
 `
 
@@ -144,22 +107,20 @@ export const Delivery = styled.div`
   h3 {
     color: ${colors.secundary};
     width: 100%;
+    height: 19px;
     font-weight: bold;
-    font-size: 1rem;
-    line-height: 1.25;
-    margin-bottom: 1rem;
+    font-size: 16px;
+    line-height: 18.75px;
+    margin-bottom: 16px;
   }
-
   label {
     color: ${colors.secundary};
   }
-
   input {
-    height: 2rem;
-    margin: 0.5rem 0;
+    height: 32px;
+    margin: 8px 0;
     background-color: ${colors.secundary};
     border: none;
-    border-radius: 5px; /* Bordas arredondadas */
 
     &.error {
       border: 3px solid red;
@@ -168,21 +129,20 @@ export const Delivery = styled.div`
 
   > p {
     color: ${colors.secundary};
-    font-size: 0.875rem;
-    line-height: 1.57;
-    margin-bottom: 1.5rem;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
   }
 `
 
 export const InputDelivery = styled.input`
-  width: 100%;
-  max-width: 344px;
-  height: 2rem;
+  width: 344px;
+  height: 32px;
   display: block;
-  margin: 0.5rem 0;
+  width: 100%;
+  margin: 8px 0;
   background-color: ${colors.secundary};
   border: none;
-  border-radius: 5px; /* Bordas arredondadas */
 
   &.error {
     border: 3px solid red;
@@ -191,18 +151,12 @@ export const InputDelivery = styled.input`
 
 export const InputsWithDisplayFlex = styled.div`
   display: flex;
-  column-gap: 1.375rem;
-  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  column-gap: 22px;
 `
 
 export const InputNumber = styled(InputMask)`
-  width: 100%;
-  max-width: 218px;
-  border-radius: 5px; /* Bordas arredondadas */
+  width: 218px;
 `
-
 export const InputCode = styled(InputMask)`
-  width: 100%;
-  max-width: 87px;
-  border-radius: 5px; /* Bordas arredondadas */
+  width: 87px;
 `
