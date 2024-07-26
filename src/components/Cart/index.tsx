@@ -11,14 +11,15 @@ import { usePurchaseMutation } from '../../services/api'
 import { RootReducer } from '../../store'
 import { closeCart, removeToCart, clearCart } from '../../store/reducers/cart'
 import { parseToBrl } from '../../utils/index'
-
+// Estados locais para controle das etapas do pedido
 const Cart = () => {
   const [delivery, setDelivery] = useState(false)
   const [payment, setPayment] = useState(false)
   const [orderPlaced, setOrderPlaced] = useState(false)
   const dispatch = useDispatch()
+  // Hook para a mutação de compra
   const [purchase, { data, isLoading }] = usePurchaseMutation()
-
+  // Inicialização do formulário com Formik e validação com Yup
   const form = useFormik({
     initialValues: {
       nameCard: '',
@@ -54,6 +55,7 @@ const Cart = () => {
       expiresYear: Yup.string().required('O campo é obrigatório')
     }),
     onSubmit: (values) => {
+      // Função para enviar os dados do pedido ao servidor
       purchase({
         delivery: {
           receiver: values.fullName,
@@ -83,15 +85,14 @@ const Cart = () => {
       })
     }
   })
-
+  // Função para fechar o carrinho
   const toCloseCart = () => {
     dispatch(closeCart())
   }
-
+  // Seleção do estado do carrinho no Redux
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
-
+  // Função para calcular o preço total dos itens no carrinho
   const getTotalPrice = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return items.reduce((acc: any, currentValue: { preco: any }) => {
       if (currentValue.preco) {
         return (acc += currentValue.preco)
@@ -99,11 +100,11 @@ const Cart = () => {
       return 0
     }, 0)
   }
-
+  // Função para remover um item do carrinho
   const toRemoveItem = (id: number) => {
     dispatch(removeToCart(id))
   }
-
+  // Função para remover um item do carrinho
   const finishOrder = () => {
     toCloseCart()
     dispatch(clearCart())
@@ -111,7 +112,7 @@ const Cart = () => {
     setPayment(false)
     setOrderPlaced(false)
   }
-
+  // Função para verificar se um campo do formulário possui erro
   const checkInputHasError = (fieldName: string) => {
     const isTouched = fieldName in form.touched
     const isInvalid = fieldName in form.errors
