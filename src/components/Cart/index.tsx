@@ -325,15 +325,49 @@ const Cart = () => {
                   type="text"
                   name="addContent"
                   id="addContent"
-                />{' '}
+                />
                 <br />
                 <Button
                   type="button"
-                  onClick={() => setPayment(true)}
+                  onClick={async () => {
+                    // Valida manualmente todos os campos do formulário e atualiza os erros
+                    await form.validateForm()
+                    form.setTouched(
+                      {
+                        fullName: true,
+                        adress: true,
+                        city: true,
+                        zipCode: true,
+                        number: true
+                      },
+                      true
+                    )
+
+                    // Verifica se o usuário tentou avançar para a etapa de pagamento
+                    if (setPayment) {
+                      // Verifica se os campos obrigatórios estão preenchidos
+                      if (
+                        form.values.fullName &&
+                        form.values.adress &&
+                        form.values.city &&
+                        form.values.zipCode &&
+                        form.values.number
+                      ) {
+                        // Se os campos obrigatórios estiverem preenchidos, avança para a etapa de pagamento
+                        setPayment(true)
+                      } else {
+                        // Se os campos obrigatórios não estiverem preenchidos, exibe um alerta
+                        alert(
+                          'Por favor, preencha todos os campos obrigatórios do endereço.'
+                        )
+                      }
+                    }
+                  }}
                   title="Clique para continuar com o pagamento"
                 >
                   Continuar com o pagamento
-                </Button>{' '}
+                </Button>
+
                 <br />
                 <Button
                   type="button"
