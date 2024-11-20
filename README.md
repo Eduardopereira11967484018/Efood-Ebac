@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Galeria de Restaurante Virtual
+Este projeto é uma galeria virtual de um restaurante, onde os usuários podem visualizar o catálogo dos principais pratos oferecidos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Protótipo
+Você pode visualizar o protótipo no Figma: Galeria de Restaurante
 
-## Available Scripts
+Scripts Disponíveis
+No diretório do projeto, você pode executar:
 
-In the project directory, you can run:
+npm start
+Executa o aplicativo em modo de desenvolvimento.
 
-### `npm start`
+Abra http://localhost:3000 para visualizá-lo no seu navegador.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A página será recarregada quando você fizer alterações.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Você também pode ver quaisquer erros de lint no console.
 
-### `npm test`
+npm test
+Inicia o executor de testes em modo interativo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Consulte a seção sobre executando testes para mais informações.
 
-### `npm run build`
+npm run build
+Cria o aplicativo para produção na pasta build.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ele agrupa corretamente o React em modo de produção e otimiza a construção para o melhor desempenho.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A construção é minificada e os nomes dos arquivos incluem os hashes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Seu aplicativo está pronto para ser implantado!
 
-### `npm run eject`
+Consulte a seção sobre implantação para mais informações.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm run eject
+Nota: esta é uma operação irreversível. Uma vez que você eject, não poderá voltar!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se você não estiver satisfeito com as ferramentas de construção e opções de configuração, pode eject a qualquer momento. Este comando removerá a única dependência de construção do seu projeto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Em vez disso, ele copiará todos os arquivos de configuração e as dependências transitivas (webpack, Babel, ESLint, etc.) diretamente para o seu projeto, para que você tenha controle total sobre eles. Todos os comandos, exceto eject, ainda funcionarão, mas apontarão para os scripts copiados para que você possa ajustá-los. Neste ponto, você está por conta própria.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Você não precisa usar eject. O conjunto de recursos curados é adequado para implantações pequenas e médias, e você não deve se sentir obrigado a usar este recurso. No entanto, entendemos que essa ferramenta não seria útil se você não pudesse personalizá-la quando estiver pronto.
 
-## Learn More
+Aprenda Mais
+Você pode aprender mais na documentação do Create React App.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para aprender React, consulte a documentação do React.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Recursos Adicionais
+Divisão de Código
+Analisando o Tamanho do Pacote
+Criando um Progressive Web App
+Configuração Avançada
+Implantação
+Erro: npm run build falha ao minificar
